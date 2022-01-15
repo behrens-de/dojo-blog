@@ -1,10 +1,19 @@
+import Navbar from "./components/Navibar";
+import Home from "./components/Home";
+
 function App() {
-  return (
+
+  const title = 'Dojo Blog!'
+
+
+  const jsx = (
     <div>
-      <h1>Hello React!</h1>
-      <p>The App Component</p>
+      <Navbar name={title} />
+      <Home />
     </div>
   );
+
+  return jsx;
 }
 
 export default App;
