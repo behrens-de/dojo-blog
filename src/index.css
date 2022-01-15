@@ -43,3 +43,22 @@ nav.navbar ul > li > a {
   text-decoration: none;
 }
 
+
+
+/* - BLOG - */
+.blog-preview{
+  border: 1px solid #9b9b9b;
+  padding: 1rem;
+  margin: .5rem 0;
+}
+
+.blog-preview h2{
+  font-weight: 600;
+  color: rgb(162, 59, 59);
+
+}
+
+.blog-preview span{
+  font-size: 90%;
+  color: #686868;
+}
