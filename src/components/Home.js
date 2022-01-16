@@ -1,41 +1,52 @@
 import { useState } from "react"
+import BlogList from "./BlogList"
 const Home = () => {
 
     // useState Hook
-    const [name, setName] = useState({ firstname: 'Jan', lastname: 'Behrens' })
     const [blogs, setBlogs] = useState([
         { id: 1, title: 'my new website', body: 'lorem ipsum', author: 'Jan Behrens' },
-        { id: 2, title: 'wilcome party!', body: 'lorem ipsum', author: 'Jan Behrens' },
+        { id: 2, title: 'wilcome party!', body: 'lorem ipsum', author: 'Tom Buretti' },
         { id: 3, title: 'Web dev tips', body: 'lorem ipsum', author: 'Jan Behrens' },
+        { id: 4, title: 'Schminksachen', body: 'lorem ipsum', author: 'Anna Boroday' },
+        { id: 5, title: 'Haushalts Dinge', body: 'lorem ipsum', author: 'Anna Boroday' },
     ])
 
 
     const handleClickEvent = (event) => {
         console.log('EVENT: ', event)
-        setName({ ...name, lastname: 'Buretti' })
     }
 
     const handleClickParam = (param) => {
         console.log('PARAM: ', param)
     }
 
-    return (<div className="Home">
-        <div  className="container">
-            <h1>HALLO ich bin HOME</h1>
-            
-            {blogs.map(blog => {
-               return  <div className="blog-preview" key={blog.id}>™
-                   <h2>{blog.title}</h2>
-                   <p>{blog.body}</p>
-                   <span>von: {blog.author}</span>
-                   </div>
-            })}
+    const filterdBlogs = (author, explicit=false) => {
+        return blogs.filter(blog => { 
+            if(explicit) return blog.author === author;
+            return blog.author.toLowerCase().includes(author.toLowerCase()) 
+        });
+    }
 
-            <p>{name.firstname} {name.lastname}</p>
+    const handleDelete = (id) => {
+        // Removed Blog Item by ID
+        setBlogs(blogs.filter(blog => blog.id !== id));
+    }
+
+    const jsx = (<div className="Home">
+        <div className="container">
+            <h1>HALLO ich bin HOME</h1>
+
+            <BlogList blogs={blogs} title={'Alle Blogs'} handleDelete={handleDelete} />
+            {/* <BlogList blogs={filterdBlogs("jan")} title={'Jans Blogs'} />
+            <BlogList blogs={filterdBlogs('Tom')} title={'Toms Blogs'} />
+            <BlogList blogs={filterdBlogs('Anna')} title={'Annas Blogs'} /> */}
+
             <button onClick={handleClickEvent}>Event: Click me!</button>
             <button onClick={() => handleClickParam('Argument')}>Param: Click me!</button>
         </div>
     </div>);
+
+    return jsx;
 }
 
 export default Home;
