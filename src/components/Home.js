@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import BlogList from "./BlogList"
 const Home = () => {
 
@@ -10,6 +10,16 @@ const Home = () => {
         { id: 4, title: 'Schminksachen', body: 'lorem ipsum', author: 'Anna Boroday' },
         { id: 5, title: 'Haushalts Dinge', body: 'lorem ipsum', author: 'Anna Boroday' },
     ])
+
+    // useEffect
+    // Wird beim jeden neuen render vorgang ausgeführt 
+    useEffect(()=>{
+        // zum beispiel um daten zu fetchen
+        console.log('useEffect ran');
+        console.log(blogs);
+        
+        
+    })
 
 
     const handleClickEvent = (event) => {
