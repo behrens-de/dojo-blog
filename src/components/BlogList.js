@@ -12,7 +12,6 @@ const BlogList = props => {
                 <h2>{title}</h2>
                 <p>{body}</p>
                 <span>von: {author}</span>
-                <button onClick={() => props.handleDelete(id)}>DELETE BLOG</button>
             </div>
         })}
 
