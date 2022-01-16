@@ -1,5 +1,6 @@
 import Navbar from "./components/Navibar";
 import Home from "./components/Home";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
 
@@ -7,10 +8,19 @@ function App() {
 
 
   const jsx = (
-    <div>
-      <Navbar name={title} />
-      <Home />
-    </div>
+    <Router>
+      <div>
+        <Navbar name={title} />
+
+        <Switch>
+          <Route path="/" >
+            <Home />
+          </Route>
+        </Switch>
+
+      </div>
+    </Router>
+
   );
 
   return jsx;
