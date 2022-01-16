@@ -8,7 +8,7 @@ const Navbar = props => {
                 <h1>{name ?? 'NO NAMED'}</h1>
                 <ul className="liks">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/">Add New!</a></li>
+                    <li><a href="/create">Add New!</a></li>
                 </ul>
             </nav>
         </div>

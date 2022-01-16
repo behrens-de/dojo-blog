@@ -80,3 +80,12 @@ b{
   padding: 1rem;
   margin: 1rem 0;
 }
+
+.create{
+  margin: 1rem auto;
+}
+
+h2{
+  font-size: 1.2rem;
+  font-weight: 600;
+}

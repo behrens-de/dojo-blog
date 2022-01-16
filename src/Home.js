@@ -1,7 +1,7 @@
-import BlogList from "./BlogList"
-import Err from "./Err"
-import Loading from "./Loading"
-import useFetch from "../hooks/useFetch"
+import BlogList from "./components/BlogList"
+import Err from "./components/Err"
+import Loading from "./components/Loading"
+import useFetch from "./hooks/useFetch"
 const Home = () => {
 
     const {data: blogs, isLoading, error} = useFetch('http://localhost:8000/blogs');
