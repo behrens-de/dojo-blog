@@ -1,0 +1,34 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "my new website",
+      "body": "lorem ipsum",
+      "author": "Jan"
+    },
+    {
+      "id": 2,
+      "title": "wilcome party!",
+      "body": "lorem ipsum",
+      "author": "Tom"
+    },
+    {
+      "id": 3,
+      "title": "Web dev tips",
+      "body": "lorem ipsum",
+      "author": "Jan"
+    },
+    {
+      "id": 4,
+      "title": "Schminksachen",
+      "body": "lorem ipsum",
+      "author": "Anna"
+    },
+    {
+      "id": 5,
+      "title": "Haushalts Dinge",
+      "body": "lorem ipsum",
+      "author": "Anna"
+    }
+  ]
+}

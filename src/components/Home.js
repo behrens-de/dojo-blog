@@ -9,19 +9,19 @@ const Home = () => {
         { id: 3, title: 'Web dev tips', body: 'lorem ipsum', author: 'Jan Behrens' },
         { id: 4, title: 'Schminksachen', body: 'lorem ipsum', author: 'Anna Boroday' },
         { id: 5, title: 'Haushalts Dinge', body: 'lorem ipsum', author: 'Anna Boroday' },
-    ])
+    ]);
+
+    const [name, setName] = useState('Jan Behrens');
 
     // useEffect
     // Wird beim jeden neuen render vorgang ausgeführt 
     useEffect(()=>{
         // zum beispiel um daten zu fetchen
-        console.log('useEffect ran');
-        console.log(blogs);
-        
-        
-    })
+        console.log(name);  
+    }, []);
 
 
+    
     const handleClickEvent = (event) => {
         console.log('EVENT: ', event)
     }
@@ -54,6 +54,8 @@ const Home = () => {
             <button onClick={handleClickEvent}>Event: Click me!</button>
             <button onClick={() => handleClickParam('Argument')}>Param: Click me!</button>
         </div>
+        <button onClick={()=>{setName('Test')}}>änder den Name</button>
+        <p>{name}</p>
     </div>);
 
     return jsx;
