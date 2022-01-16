@@ -2,8 +2,6 @@ const BlogList = props => {
 
     const { blogs, title } = props;
 
-
-
     const jsx = (<div className="block-list">
         <h2>{title ?? 'Unknown'}</h2>
         {blogs.map(blog => {

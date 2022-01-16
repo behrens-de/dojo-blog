@@ -4,6 +4,7 @@ const Home = () => {
 
     // useState Hook
     const [blogs, setBlogs] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     // useEffect
     // Wird beim jeden neuen render vorgang ausgeführt 
@@ -12,22 +13,24 @@ const Home = () => {
         fetch('http://localhost:8000/blogs') // <= API ENDPOINT
             .then(response => response.json())
             .then(data => {
+
                 setBlogs(data);
+                setIsLoading(false)
+
+
             });
 
     }, []); // <= beim ersten laden 
 
 
-    const handleDelete = (id) => {
-        // Removed Blog Item by ID
-        setBlogs(blogs.filter(blog => blog.id !== id));
-    }
+
+
 
     const jsx = (<div className="Home">
         <div className="container">
-            <h1>HALLO ich bin HOME</h1>
-            
-            {blogs && <BlogList blogs={blogs} title={'Alle Blogs'} handleDelete={handleDelete} />}
+            {isLoading && <div>Loading...</div>}
+            {/* Bloglist wird erst ausgeführt wenn blogs !== null */}
+            {blogs && <BlogList blogs={blogs} title={'Alle Blogs'} />}
         </div>
     </div>);
 
