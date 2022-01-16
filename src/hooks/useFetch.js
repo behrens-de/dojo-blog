@@ -32,7 +32,7 @@ const useFetch = (url) => {
                     }
                 })
             // CLEAN UP
-        }, 2000);
+        }, 200);
         
         return () => abortCtlr.abort();
 
