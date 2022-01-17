@@ -3,9 +3,10 @@
 *{
   margin: 0;
   padding: 0;
-  font-size: inherit;
+  font-family: inherit;
   color: #3e3e3e;
   font-weight: 400;
+  box-sizing: border-box;
 }
 
 body{
@@ -106,4 +107,30 @@ h2{
 .blog-details > .author{
   font-size: .9rem;
   color: #ccc;
+}
+
+.add-blog-form > *{
+width: 100%;
+margin: .5rem 0;
+}
+
+.add-blog-form > select,
+.add-blog-form > input,
+.add-blog-form > textarea,
+.add-blog-form > button{
+  line-height: 1.2rem;
+  padding: .5rem;
+}
+
+.add-blog-form > textarea{
+  min-height: 5rem;
+}
+
+.add-blog-form > button{
+  background-color:rgb(162, 59, 59);
+  border: none;
+  border-bottom: 3px solid rgb(113, 31, 31);
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
 }
