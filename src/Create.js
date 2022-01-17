@@ -6,11 +6,35 @@ const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Anna');
+    const [isLoading, setIsLoading] = useState(false);
 
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        //Creat a blog Item 
+        setIsLoading(true)
+        setTimeout(() => {
+            const blogItem = { title, body, author };
+            // Send a Post Request to JSON Server
+            const endpoint = 'http://localhost:8000/blogs'
+            fetch(endpoint, {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(blogItem)
+            }).then(() => {
+                console.log('New Blog Added');
+                setIsLoading(false);
+
+            })
+        }, 1000);
+
+    }
 
     return (<div className="container create">
+
+
         <h2>Add a new Blog :)</h2>
-        <form className="add-blog-form">
+        <form onSubmit={handleSubmit} className="add-blog-form">
             <label>Blog Title</label>
             <input
                 required
@@ -34,7 +58,7 @@ const Create = () => {
                 <option value="Tom">Tom</option>
             </select>
 
-            <button>Add Blog!</button>
+            {!isLoading ? (<button>Add Blog!</button>) : (<button disabled="disabled">... warten</button>)}
         </form>
 
         <p>{title}</p>
