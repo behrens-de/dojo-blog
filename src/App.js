@@ -20,7 +20,6 @@ function App() {
           <Route path="/create" component={Create} /> 
           <Route path="/blog/:id" component={BlogDetails} /> 
           <Route><div>404</div></Route>
-
         </Switch>
 
       </div>

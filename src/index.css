@@ -89,3 +89,21 @@ h2{
   font-size: 1.2rem;
   font-weight: 600;
 }
+
+
+.blog-details{
+  margin: 1rem 0;
+}
+
+.blog-details h2{
+  font-size: 1.3rem;
+}
+
+.blog-details > div{
+  padding: .5rem 0;
+}
+
+.blog-details > .author{
+  font-size: .9rem;
+  color: #ccc;
+}
