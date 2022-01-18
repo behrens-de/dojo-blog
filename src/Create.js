@@ -1,5 +1,5 @@
 import { useState } from "react/cjs/react.development";
-
+import { useHistory } from "react-router-dom";
 const Create = () => {
 
 
@@ -7,27 +7,29 @@ const Create = () => {
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Anna');
     const [isLoading, setIsLoading] = useState(false);
+    const history = useHistory();
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         //Creat a blog Item 
         setIsLoading(true)
-        setTimeout(() => {
-            const blogItem = { title, body, author };
-            // Send a Post Request to JSON Server
-            const endpoint = 'http://localhost:8000/blogs'
-            fetch(endpoint, {
-                method: 'POST',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(blogItem)
-            }).then(() => {
-                console.log('New Blog Added');
-                setIsLoading(false);
 
-            })
-        }, 1000);
+        const blogItem = { title, body, author };
+        // Send a Post Request to JSON Server
+        const endpoint = 'http://localhost:8000/blogs'
+        fetch(endpoint, {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(blogItem)
+        }).then(() => {
+            console.log('New Blog Added');
+            setIsLoading(false);
+            history.go(-1);    // geht eins in der History zurück
+            // history.push('/');    // <= geht zu einer bestimmten Route  
+        })
 
+        
     }
 
     return (<div className="container create">
