@@ -1,18 +1,6 @@
 {
   "blogs": [
     {
-      "id": 1,
-      "title": "my new website",
-      "body": "lorem ipsum",
-      "author": "Jan"
-    },
-    {
-      "id": 2,
-      "title": "wilcome party!",
-      "body": "lorem ipsum",
-      "author": "Tom"
-    },
-    {
       "id": 3,
       "title": "Web dev tips",
       "body": "lorem ipsum",
@@ -37,36 +25,6 @@
       "id": 6
     },
     {
-      "title": "ddddd",
-      "body": "ddd",
-      "author": "Tom",
-      "id": 7
-    },
-    {
-      "title": "dedede",
-      "body": "dedede",
-      "author": "Anna",
-      "id": 8
-    },
-    {
-      "title": "ddddd",
-      "body": "dddd",
-      "author": "Anna",
-      "id": 9
-    },
-    {
-      "title": "ddddd",
-      "body": "dddd",
-      "author": "Anna",
-      "id": 10
-    },
-    {
-      "title": "ddddd",
-      "body": "dddd",
-      "author": "Anna",
-      "id": 11
-    },
-    {
       "title": "max muster",
       "body": "dekfkrüeerf",
       "author": "Anna",
@@ -83,6 +41,12 @@
       "body": "ich bin ein muster",
       "author": "Tom",
       "id": 14
+    },
+    {
+      "title": "React ist cool",
+      "body": "ich wollte an dieser Stelle lediglich erwähnen das React echt eine coole JavaScript erweiterung ist. Und Facebook echt mega arbeit geleistet hat :)",
+      "author": "Jan",
+      "id": 15
     }
   ]
 }

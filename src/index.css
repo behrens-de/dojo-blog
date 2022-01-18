@@ -134,3 +134,13 @@ margin: .5rem 0;
   color: #fff;
   cursor: pointer;
 }
+
+.delete-button{
+  background-color:rgb(162, 59, 59);
+  border: none;
+  border-bottom: 3px solid rgb(113, 31, 31);
+  font-weight: 600;
+  color: #fff;
+  padding: .25rem 1rem;
+  cursor: pointer;
+}
