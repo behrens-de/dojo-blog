@@ -14,7 +14,6 @@ const Create = () => {
         e.preventDefault();
         //Creat a blog Item 
         setIsLoading(true)
-
         const blogItem = { title, body, author };
         // Send a Post Request to JSON Server
         const endpoint = 'http://localhost:8000/blogs'
@@ -27,14 +26,10 @@ const Create = () => {
             setIsLoading(false);
             history.go(-1);    // geht eins in der History zurück
             // history.push('/');    // <= geht zu einer bestimmten Route  
-        })
-
-        
+        })        
     }
 
     return (<div className="container create">
-
-
         <h2>Add a new Blog :)</h2>
         <form onSubmit={handleSubmit} className="add-blog-form">
             <label>Blog Title</label>
